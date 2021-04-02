@@ -890,12 +890,15 @@ open class Floaty: UIView {
         height: size
       )
     } else {
-      frame = CGRect(
+      if frame.minX == 0 && frame.minY == 0 { 
+        frame = CGRect(
         x: (superview!.bounds.size.width - horizontalMargin) - paddingX,
         y: (superview!.bounds.size.height - verticalMargin) - paddingY,
         width: size,
         height: size
       )
+      }
+      
     }
     
     if friendlyTap == true {
