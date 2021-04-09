@@ -16,7 +16,7 @@ extension UIView {
     
     @objc private func draggedAction(_ gesture:UIPanGestureRecognizer){
         
-        let padding = UIScreen.main.bounds.width / 320 * 20
+       let padding = UIScreen.main.bounds.width / 320 * 20
         switch gesture.state {
         case .ended:
             let translation = gesture.translation(in: self.superview)
@@ -37,7 +37,7 @@ extension UIView {
                   horizontalMargin += safeAreaInsets.right
                 }
                 x = (superview!.bounds.size.width - horizontalMargin) - view.paddingX
-                y =  (UIScreen.main.bounds.size.height - verticalMargin) - view.paddingY
+                y =  (superview!.bounds.size.height - verticalMargin) - view.paddingY
             } else if  self.frame.minY > superview!.bounds.height / 2{
                 y =  self.frame.minY + translation.y
             } else {
