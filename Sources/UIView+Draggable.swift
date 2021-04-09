@@ -14,7 +14,7 @@ extension UIView {
         self.addGestureRecognizer(panGesture)
     }
     
-    @objc private func draggedAction(_ pan:UIPanGestureRecognizer){
+    @objc private func draggedAction(_ gesture:UIPanGestureRecognizer){
         
         let padding = UIScreen.main.bounds.width / 320 * 20
         switch gesture.state {
